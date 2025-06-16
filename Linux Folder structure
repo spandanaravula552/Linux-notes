@@ -1,2 +1,22 @@
-first folder:sbin is System binaries for administrative commands, means which helps to manage the system as administrator sbin folder has commands like useradd, userdl, usermod.
-how to create user: useradd <username> ex: sudo useradd spandana, to go to the user: su spandana, to come out of the created user, give cntrl+d
+first folder:sbin is System binaries for administrative commands, means which helps to manage the system as administrator, sbin folder has commands like useradd, userdl, usermod.
+how to create user: sudo useradd <username> ex: sudo useradd spandana, 
+To set the password for the user: sudo passwd <username>
+To go to the user: su spandana, to come out of the created user, give cntrl+d.
+ls boot, boot folder is used to reboot or restart your system.
+bin folder: bin stands for user binaries, all the commands/binaries inside bin folder are non-administrative. 
+we can grant access to the regular users using these commands.anybody can use these commands which are in bin folder.
+let say for ex: user wants to check the date and time of linux machine, they can execute the command: date.
+usr folder: /usr	Contains most user-installed applications and libraries.
+Note: Commands: cd / will take you to the root directory of file system in Linux.
+srv folder: srv stands for server, we can store any configuration files or any information related to our webserver.
+opt folder: /opt	Used to store optional third-party dependencies or software.like java. opt folder is a common location for third party dependencies.
+mnt folder: mnt is stands for mount, it is used by linux administrators to temporary mount the new disk or volume.
+var folder: mostly var is used to store the log files.
+home folder: /home	is Default location for user home directories.
+/tmp	folder: it is used to store Temporary files (cleared on reboot).if we store any file in tmp folder, it will delete after few days.
+root folder: root is the home directoy of the root
+Note: any user we created, their home directory is /home/username, but for root th home dir is /root
+run folder: run folder stores the runtime data of the processess.
+etc folder: like windows we has C folder, which contains all the system configuration files, same in linux also, all the system configuration files are stored in etc folder.
+using these files we can configure and modify our system, its like settings on our mobile.
+for ex:the command "passwd" we can modify pwd any user on linux machine.
