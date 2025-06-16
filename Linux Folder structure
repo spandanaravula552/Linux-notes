@@ -1,0 +1,2 @@
+first folder:sbin is System binaries for administrative commands, means which helps to manage the system as administrator sbin folder has commands like useradd, userdl, usermod.
+how to create user: useradd <username> ex: sudo useradd spandana, to go to the user: su spandana, to come out of the created user, give cntrl+d
