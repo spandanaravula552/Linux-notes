@@ -4,4 +4,7 @@ How to create pwd for user : passwd username ex: passwd ravspandana
 Note: we can't decrypt the pwd, if engineer forgot the pwd also, we can't restore them. (cat /etc/shadow - to see the encrypted pwd)
 How to delete the user: userdel username  ex: userdel ravspandana
 To create the home directory for the user and wants to save the information about the user, and also we can give pwd in the same command only, no need to issue passwd command, we need to use the "adduser" command.
-command: adduser <username>  ex: adduser potti, then it will ask to setup the pwd, after that it will ask for full name of user, work ph no:, home ph no:, and other details.
+command: adduser <username>  ex: adduser potti, then it will ask to setup the pwd, after that it will ask for full name of user, work ph no:, home ph no:, and other details. and also it creates home directory for users.
+To login to the particular user command is: su - <username> ex: su - ravspandana
+and also to display the current username, the command is - whoami
+To delete the particular folder in linux environment: rm -rf <foldername> ex: rm -rf /sbin
