@@ -1,0 +1,7 @@
+How to setup linux on windows.
+Go to windows features turn off->check th box that Windows subsystem fo linux->restart->in the cmd run the command as wsl --install -d <linux-distribution name>. example: wsl --install -d ubuntu.
+Then in cmd, prompt will ask for username "testlablinux", pwd: Linuxlab@123
+We can install WSL from Microsoft store also.
+when we setup WSL on windows-> the dir on command prompt is lik this: testlablinux@DESKTOP-8AJF2HB:~$
+testlablinux is the username, DeSKTOP is the is the hostname, "~" this is called as tilt, which means /home/testlablinux, means directory is created.
+ls command: ls command is used to list out the all the folders and files in that particular directory.
