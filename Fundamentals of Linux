@@ -2,6 +2,65 @@ How to setup linux on windows.
 Go to windows features turn off->check th box that Windows subsystem fo linux->restart->in the cmd run the command as wsl --install -d <linux-distribution name>. example: wsl --install -d ubuntu.
 Then in cmd, prompt will ask for username "testlablinux", pwd: Linuxlab@123
 We can install WSL from Microsoft store also.
-when we setup WSL on windows-> the dir on command prompt is lik this: testlablinux@DESKTOP-8AJF2HB:~$
+when we setup WSL on windows-> the dir on command prompt is like this: testlablinux@DESKTOP-8AJF2HB:~$
 testlablinux is the username, DeSKTOP is the is the hostname, "~" this is called as tilt, which means /home/testlablinux, means directory is created.
 ls command: ls command is used to list out the all the folders and files in that particular directory.
+difference between ls and -lrt is ls is used to list out the files in current directory in alphabetical order. bin  bin.usr-is-merged  boot  dev  etc  home  init  lib  lib.usr-is-merged  lib64  media  mnt  opt  proc  root  run  sbin  sbin.usr-is-merged  snap  srv  sys  test  tmp  usr  var
+-lrt means l is for long listing format which means it can provide the information of folders such as size, and modification time.
+r means reverse order, it display the oldest file first
+t means sort by modification time, in the cmd, if we give the command as ls -lt, it can provide the latest files by time, like today file come first, last year files comes under latest one.
+ex:root@DESKTOP-8AJF2HB:/# ls -lrt
+total 632
+-rwxr-xr-x  1 root root 644432 Jan  4  2023 init
+drwxr-xr-x  1 root root    512 Feb 26  2024 bin.usr-is-merged
+drwxr-xr-x  1 root root    512 Mar 31  2024 sbin.usr-is-merged
+drwxr-xr-x  1 root root    512 Apr  8  2024 lib.usr-is-merged
+lrwxrwxrwx  1 root root      8 Apr 22  2024 sbin -> usr/sbin
+lrwxrwxrwx  1 root root      9 Apr 22  2024 lib64 -> usr/lib64
+lrwxrwxrwx  1 root root      7 Apr 22  2024 lib -> usr/lib
+drwxr-xr-x  1 root root    512 Apr 22  2024 boot
+lrwxrwxrwx  1 root root      7 Apr 22  2024 bin -> usr/bin
+drwxr-xr-x  1 root root    512 Oct 11  2024 snap
+drwxr-xr-x  1 root root    512 Jan  6 20:13 srv
+drwxr-xr-x  1 root root    512 Jan  6 20:13 opt
+drwxr-xr-x  1 root root    512 Jan  6 20:13 media
+drwxr-xr-x  1 root root    512 Jan  6 20:13 usr
+drwxr-xr-x  1 root root    512 Jan  6 20:15 var
+drwxr-xr-x  1 root root    512 Jun 16 05:25 mnt
+dr-xr-xr-x 12 root root      0 Jun 16 05:26 sys
+dr-xr-xr-x 18 root root      0 Jun 16 05:26 proc
+drwxr-xr-x  1 root root    512 Jun 16 05:26 home
+drwxr-xr-x  1 root root    512 Jun 16 05:27 etc
+drwxr-xr-x  1 root root    512 Jun 16 05:52 run
+drwx------  1 root root    512 Jun 16 05:52 root
+drwxrwxrwt  1 root root    512 Jun 16 05:52 tmp
+drwxr-xr-x  1 root root    512 Jun 16 05:54 test
+drwxr-xr-x  1 root root    512 Jun 16 06:48 dev
+root@DESKTOP-8AJF2HB:/# ls -lt
+total 632
+drwxr-xr-x  1 root root    512 Jun 16 06:48 dev
+drwxr-xr-x  1 root root    512 Jun 16 05:54 test
+drwxrwxrwt  1 root root    512 Jun 16 05:52 tmp
+drwx------  1 root root    512 Jun 16 05:52 root
+drwxr-xr-x  1 root root    512 Jun 16 05:52 run
+drwxr-xr-x  1 root root    512 Jun 16 05:27 etc
+drwxr-xr-x  1 root root    512 Jun 16 05:26 home
+dr-xr-xr-x 18 root root      0 Jun 16 05:26 proc
+dr-xr-xr-x 12 root root      0 Jun 16 05:26 sys
+drwxr-xr-x  1 root root    512 Jun 16 05:25 mnt
+drwxr-xr-x  1 root root    512 Jan  6 20:15 var
+drwxr-xr-x  1 root root    512 Jan  6 20:13 usr
+drwxr-xr-x  1 root root    512 Jan  6 20:13 media
+drwxr-xr-x  1 root root    512 Jan  6 20:13 opt
+drwxr-xr-x  1 root root    512 Jan  6 20:13 srv
+drwxr-xr-x  1 root root    512 Oct 11  2024 snap
+lrwxrwxrwx  1 root root      7 Apr 22  2024 bin -> usr/bin
+drwxr-xr-x  1 root root    512 Apr 22  2024 boot
+lrwxrwxrwx  1 root root      7 Apr 22  2024 lib -> usr/lib
+lrwxrwxrwx  1 root root      9 Apr 22  2024 lib64 -> usr/lib64
+lrwxrwxrwx  1 root root      8 Apr 22  2024 sbin -> usr/sbin
+drwxr-xr-x  1 root root    512 Apr  8  2024 lib.usr-is-merged
+drwxr-xr-x  1 root root    512 Mar 31  2024 sbin.usr-is-merged
+drwxr-xr-x  1 root root    512 Feb 26  2024 bin.usr-is-merged
+-rwxr-xr-x  1 root root 644432 Jan  4  2023 init
+
