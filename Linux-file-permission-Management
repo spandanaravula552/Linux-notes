@@ -1,0 +1,2 @@
+Note: By default, linux provides basic permission to the files and folders.
+for ex: you created two users in tmp folder, one user created one text file, and if another user logged into his account and try to edit th user file, it will gives you error that you has read-only file permission.
