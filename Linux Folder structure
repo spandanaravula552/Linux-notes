@@ -6,7 +6,7 @@ ls boot, boot folder is used to reboot or restart your system.
 bin folder: bin stands for user binaries, all the commands/binaries inside bin folder are non-administrative. 
 we can grant access to the regular users using these commands.anybody can use these commands which are in bin folder.
 let say for ex: user wants to check the date and time of linux machine, they can execute the command: date.
-usr folder: /usr	Contains most user-installed applications and libraries.
+usr folder: /usr Contains most user-installed applications and libraries.
 Note: Commands: cd / will take you to the root directory of file system in Linux.
 srv folder: srv stands for server, we can store any configuration files or any information related to our webserver.
 opt folder: /opt	Used to store optional third-party dependencies or software.like java. opt folder is a common location for third party dependencies.
