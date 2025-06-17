@@ -1,0 +1,71 @@
+To listout the files and folders: ls  (ls means list)
+some folders are in blue, green colour. Note: blue colour indicates folder.
+To go into the particular folder or directory: cd <folder or directory name> (cd means change directory).
+after going into that folder, if you want to list out the files and foldres in that dirctory, again we can us "ls" command.
+To come back out of the folder, use cd .. cd stands for "change directory".   .. means the parent directory of your current location. 
+To know which directory you are working in : pwd (present working directory).
+How to create directory or folder in the particular directory: mkdir <directory-name> (mk means make)
+To delete the created directory: rmdir <directory-name>
+To create file in particular directory or folder: touch <file-name> (file displayed as white colour).
+To copy a folder into a new folder: cp -r <source-folder> <destination-folder>
+To delete the file: rm <file-name>
+To copy the file into another file: cp <old file name> <new file-name>  This will create the new file, and copy the contents of old file into new file.
+To rename the file: mv <old file name> <new file-name>
+
+To Write contents into the file: we need to install "vim" editor: command is <apt install vim>  if you are not the root user: sudo apt install vim
+you created one file: touch span, to enter into the file: vim <file-name>  ex: vim span
+There are 3 modes in VI editor:
+1.Normal Mode (Default): used for navigation and command execution.
+2.Insert Mode: Used for text editing, press i to enter, esc to exit.
+3.Command Mode: Used for saving, quitting and searching (press : in normal mode).
+After going into the file by executing the "vim span" command, to write the content or text into the file, press i and starting writing into that file.
+Now to save the file, press "esc", now you are in Command mode, and now to save & quit th file, give ":wq!"  w is for save the file and q is to quit the file.
+Now to view the contents in your file: execute "cat <file-name>
+
+Practice:
+root@DESKTOP-8AJF2HB:/tmp# cat span
+I love linux while learning.
+Thank you abhishek v.
+root@DESKTOP-8AJF2HB:/tmp# touch potti
+root@DESKTOP-8AJF2HB:/tmp# ls
+potti  span
+root@DESKTOP-8AJF2HB:/tmp# potti vim
+potti: command not found
+root@DESKTOP-8AJF2HB:/tmp# vim potti
+root@DESKTOP-8AJF2HB:/tmp# cat potti
+Hi Spandana
+how are you
+Hi Sravani, I'm doing great.
+root@DESKTOP-8AJF2HB:/tmp#
+
+
+File management in Linux
+
+ls – Lists files and directories in the current location.
+cd /path/to/directory – Changes the working directory.
+pwd – Prints the current working directory.
+mkdir new_folder – Creates a new directory.
+rmdir empty_folder – Removes an empty directory.
+rm file.txt – Deletes a file.
+rm -r folder – Deletes a folder and its contents.
+cp file1.txt file2.txt – Copies a file.
+cp -r dir1 dir2 – Copies a directory recursively.
+mv old_name new_name – Moves or renames a file or directory.
+
+
+
+File Viewing and Editing
+
+cat file.txt – Displays file content.
+tac file.txt – Displays file content in reverse order.
+less file.txt – Opens a file for viewing with scrolling support.
+more file.txt – Similar to less, but only moves forward.
+head -n 10 file.txt – Displays the first 10 lines of a file.
+tail -n 10 file.txt – Displays the last 10 lines of a file.
+nano file.txt – Opens a simple text editor.
+vi file.txt – Opens a powerful text editor.
+echo 'Hello' > file.txt – Writes text to a file, overwriting existing content.
+echo 'Hello' >> file.txt – Appends text to a file without overwriting.
+
+
+
