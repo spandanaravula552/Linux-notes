@@ -8,3 +8,18 @@ command: adduser <username>  ex: adduser potti, then it will ask to setup the pw
 To login to the particular user command is: su - <username> ex: su - ravspandana
 and also to display the current username, the command is - whoami
 To delete the particular folder in linux environment: rm -rf <foldername> ex: rm -rf /sbin
+
+To Lock a user account : passwd -l username
+To Unlock a user account : passwd -u username
+To Change the username: usermod -l new_username old_username
+
+Deleting Users
+To remove a user but keep their home directory:userdel username
+To remove a user and their home directory: userdel -r username
+
+How to create a Group : groupadd <groupname> ex: groupadd devops
+To know whether the group is created or not : cat /etc/group
+How to add user to the group: usermod -aG <groupname> <username>   ex: usermod -aG devops spoorthi
+To check in which group user is present: groups <username>
+
+Note: If azure VM is created with SSH port, ssh enabled in NSG also, with ubuntu image, you can loggin like "ssh username@<VM-PIP>
