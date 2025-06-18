@@ -1,0 +1,34 @@
+"top" command will display you the % of cpu consumed and % of memory consumed by processess.
+"htop" will display sam but in better visuals.
+vmstat: it reports the system performance, vmstat stands for Virtual Memory Statistics. It provides a snapshot of your system’s performance, including:Memory, Swap, CPU usage,I/O, Processes.
+free -m : it provides you how much memory is used by ur system, howw much space is there to use.
+testlablinux@DESKTOP-8AJF2HB:~$ free -m
+               total        used        free      shared  buff/cache   available
+Mem:            8053        5035        3017          17         223        3017
+free -m : it provides you how much memory is used in Mega or Giga bytes by ur system, howw much space is there to use.
+testlablinux@DESKTOP-8AJF2HB:~$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           7.9Gi       4.7Gi       3.1Gi        17Mi       223Mi       3.1Gi
+Swap:           17Gi       226Mi        17Gi
+
+nproc:  number of processing units, This command gives you how many CPU are availble for the particular linux server.
+testlablinux@DESKTOP-8AJF2HB:~$ nproc
+4
+
+To see the disk space of your file system of linux: df -h
+practice:
+
+testlablinux@DESKTOP-8AJF2HB:~$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+rootfs          141G  128G   14G  91% /
+none            141G  128G   14G  91% /dev
+none            141G  128G   14G  91% /run
+none            141G  128G   14G  91% /run/lock
+none            141G  128G   14G  91% /run/shm
+none            141G  128G   14G  91% /run/user
+tmpfs           141G  128G   14G  91% /sys/fs/cgroup
+C:\             141G  128G   14G  91% /mnt/c
+D:\              98G   50G   49G  51% /mnt/d
+
+du -sh : du command stands for Disk Usage, and it's used to check how much space files and directories use. for to check this, you need to go to particular folder and run this command.
+du -sh*: gives you how much disk occupied by files inside the folder.
