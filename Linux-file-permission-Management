@@ -1,2 +1,23 @@
 Note: By default, linux provides basic permission to the files and folders.
 for ex: you created two users in tmp folder, one user created one text file, and if another user logged into his account and try to edit th user file, it will gives you error that you has read-only file permission.
+that means linux can provide read only permission.
+If we wants to know the files and folders in particular directory: we issue ls -lrt command, output is like below.
+            testlablinux@DESKTOP-8AJF2HB:/tmp$ ls -ltr
+            total 0
+            -rw-r--r-- 1 root   root   51 Jun 17 12:07 span
+            -rw-r--r-- 1 root   root   11 Jun 17 12:50 potti
+            -rw-rw-r-- 1 ravula ravula  0 Jun 17 16:50 demo.txt
+Each file and directory has three levels of permission:
+Owner (User): The creator of the file.
+Group: Users belonging to the assigned group.
+Others: Eveyone else/All other users on the system/org.
+
+for ex if we take this "-rw-rw-r--" first character (-) indicates whether it is a file or directory, it is hyphen now, so it is file, otherwise it was (d), d means directoy.
+next |rw-| -> indicates users permission.
+second set |rw-| indicates Groups permission.
+Third set |r--|  indicates others permission.
+permissions are r->indicates read, w->indicates writes, write means update or modify the file, x->indicates user can excecute the file, by default, who created the file, they don't has permission to execute the file.
+To change the permission for files and directories, we can use "chmod" command, chmod means change mode.
+for ex: if you want to give permission to others to read, write and execute the span file: chmod o=rwx span  (o indicates others)
+for ex: if you want to give permission to groups to read, write and execute the span file: chmod g=rwx span   (g indicates groups)
+for ex: if you want to give permission to user (who created the file) to read, write and execute the span file: chmod u=rwx span  (u indicates user)
