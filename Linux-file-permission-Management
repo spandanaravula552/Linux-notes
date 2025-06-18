@@ -16,8 +16,128 @@ for ex if we take this "-rw-rw-r--" first character (-) indicates whether it is 
 next |rw-| -> indicates users permission.
 second set |rw-| indicates Groups permission.
 Third set |r--|  indicates others permission.
-permissions are r->indicates read, w->indicates writes, write means update or modify the file, x->indicates user can excecute the file, by default, who created the file, they don't has permission to execute the file.
+r>indicates read, w>indicates writes, write means update or modify the file, x>indicates user can excecute the file, by default, who created the file, they don't has permission to execute the file.
 To change the permission for files and directories, we can use "chmod" command, chmod means change mode.
-for ex: if you want to give permission to others to read, write and execute the span file: chmod o=rwx span  (o indicates others)
-for ex: if you want to give permission to groups to read, write and execute the span file: chmod g=rwx span   (g indicates groups)
+for ex: if you want to give permission to others to read, write, and execute the span file: chmod o=rwx span  (o indicates others)
+for ex: if you want to give permission to groups to read, write, and execute the span file: chmod g=rwx span   (g indicates groups)
 for ex: if you want to give permission to user (who created the file) to read, write and execute the span file: chmod u=rwx span  (u indicates user)
+If you want to set all permissions to user, group and others at same time: chmod u-rwx, g=rwx, o=rwx <file-name> (This is bit complicated, that's y linux came up with numbering system)
+
+To check file permissions, use: ls -l filename  
+ex:root@DESKTOP-8AJF2HB:/tmp# ls -l hi.txt
+-rwxrwxrwx 1 spandana spandana 11 Jun 18 04:16 hi.txt 
+
+Part	Meaning
+-	File type: - means it's a regular file. (Other possibilities: d for directory, l for symbolic link, etc.)
+rwxrwxrwx	Permissions (explained below)
+1	Hard link count: Number of hard links to the file (usually 1 for regular files).
+spandana	Owner of the file.
+spandana	Group that owns the file.
+11	File size in bytes (this file is 11 bytes).
+Jun 18 04:16	Last modified date and time of the file.
+hi.txt	File name.
+
+Changing Permissions with chmod
+Using Symbolic Mode
+Modify permissions using symbols:
+
+Add (+), remove (-), or set (=) permissions.
+Examples:
+
+chmod u+x filename  # Add execute for user
+chmod g-w filename  # Remove write for group
+chmod o=r filename  # Set read-only for others
+chmod u=rwx,g=rx,o= filename  # Set full access for user, read/execute for group, and no access for others
+
+
+Practice:
+rajesh@DESKTOP-8AJF2HB:/tmp$ chmod o-r hi.txt
+rajesh@DESKTOP-8AJF2HB:/tmp$ ls -lrt
+total 0
+-rw-rw---- 1 rajesh   rajesh   11 Jun 18 04:16 hi.txt
+-rw-rw-rw- 1 spandana spandana 18 Jun 18 08:21 hello.txt
+rajesh@DESKTOP-8AJF2HB:/tmp$ chmod u-r hi.txt
+rajesh@DESKTOP-8AJF2HB:/tmp$ ls -lrt
+total 0
+--w-rw---- 1 rajesh   rajesh   11 Jun 18 04:16 hi.txt
+-rw-rw-rw- 1 spandana spandana 18 Jun 18 08:21 hello.txt
+
+
+
+Using Numeric (Octal) Mode
+Each permission has a value:
+
+Read (4), Write (2), Execute (1).
+Examples:
+
+chmod 755 filename  # User (rwx), Group (r-x), Others (r-x)
+chmod 644 filename  # User (rw-), Group (r--), Others (r--)
+chmod 700 filename  # User (rwx), No access for others
+
+
+Practice:
+spandana@DESKTOP-8AJF2HB:/tmp$ chmod 747 hello.txt
+spandana@DESKTOP-8AJF2HB:/tmp$ ls -lrt
+total 0
+-rwxrwxrwx 1 rajesh   rajesh   11 Jun 18 04:16 hi.txt
+-rwxr--rwx 1 spandana spandana 18 Jun 18 08:21 hello.txt
+
+same symbolic mode and numberic mode is applied to directory as well.
+
+rajesh@DESKTOP-8AJF2HB:/$ -> this is root directory
+rajesh@DESKTOP-8AJF2HB:~$ -> this is home directory
+to go to home dir from root, give "cd"
+
+
+chown: This commands is used to change the ownership of the file and directory.
+for ex: if the owner of on particula file or directory, don't wants to manage the permissions, then they can change the owner.
+command is : chown new-owner-name:new-owner-name <file-name>
+Note: to change the owner, you need to be logged into rootuser.
+
+Practice on chown command:
+root@DESKTOP-8AJF2HB:/# cd /tmp
+root@DESKTOP-8AJF2HB:/tmp# ls -lrt
+total 0
+-rwxrwxrwx 1 rajesh   rajesh   11 Jun 18 04:16 hi.txt  (now, rajesh is the owner of the hi.txt file)
+-rwxr--r-- 1 spandana spandana 18 Jun 18 08:21 hello.txt
+root@DESKTOP-8AJF2HB:/tmp# chown spandana:spandana hi.txt
+root@DESKTOP-8AJF2HB:/tmp# ls -lt
+total 0
+-rwxr--r-- 1 spandana spandana 18 Jun 18 08:21 hello.txt
+-rwxrwxrwx 1 spandana spandana 11 Jun 18 04:16 hi.txt  (now, spandana is the owner of the hi.txt file)
+
+
+To access the file, first we need to have access to the folder, in which file lies.
+Practice:
+spandana@DESKTOP-8AJF2HB:/$ cd tmp
+spandana@DESKTOP-8AJF2HB:/tmp$ mkdir first-folder
+spandana@DESKTOP-8AJF2HB:/tmp$ cd first-folder
+spandana@DESKTOP-8AJF2HB:/tmp/first-folder$ touch first-file
+spandana@DESKTOP-8AJF2HB:/tmp/first-folder$ ls
+first-file
+spandana@DESKTOP-8AJF2HB:/tmp/first-folder$ ls -lrt
+total 0
+-rw-rw-r-- 1 spandana spandana 0 Jun 18 10:05 first-file
+spandana@DESKTOP-8AJF2HB:/tmp/first-folder$ cd ..
+spandana@DESKTOP-8AJF2HB:/tmp$ ls
+first-folder  hello.txt  hi.txt
+spandana@DESKTOP-8AJF2HB:/tmp$ ls -lrt
+total 0
+-rwxrwxrwx 1 spandana spandana  11 Jun 18 04:16 hi.txt
+-rwxr--r-- 1 spandana spandana  18 Jun 18 08:21 hello.txt
+drwxrwxr-x 1 spandana spandana 512 Jun 18 10:05 first-folder
+spandana@DESKTOP-8AJF2HB:/tmp$ chmod 770 first-folder  (I removed read access to others)
+spandana@DESKTOP-8AJF2HB:/tmp$ ls -lrt
+total 0
+-rwxrwxrwx 1 spandana spandana  11 Jun 18 04:16 hi.txt
+-rwxr--r-- 1 spandana spandana  18 Jun 18 08:21 hello.txt
+drwxrwx--- 1 spandana spandana 512 Jun 18 10:05 first-folder
+
+Now I logged into rajesh user: so, after removing read access, rajesh is not able to read the folder.
+rajesh@DESKTOP-8AJF2HB:/tmp$ ls -lrt
+total 0
+-rwxrwxrwx 1 spandana spandana  11 Jun 18 04:16 hi.txt
+-rwxr--r-- 1 spandana spandana  18 Jun 18 08:21 hello.txt
+drwxrwx--- 1 spandana spandana 512 Jun 18 10:05 first-folder
+rajesh@DESKTOP-8AJF2HB:/tmp$ cd first-folder
+-bash: cd: first-folder: Permission denied
