@@ -1,0 +1,27 @@
+Process-Management: A process is an instance of a running program. Linux provides multiple utilities to monitor, manage, and control processes effectively. Each process has a unique Process ID (PID) and belongs to a parent process.
+To view the all processess running on linux: ps aux and ps -ef, the diff b/w both commands is ps aux list out the which user initiated the process,Process ID, Time of process triggerd, %cpu, %mem, but ps -ef will not display &cpu, %mem.
+grep: Global Regular Expression Print, which is used to search text within the files. ex: grep "hi" demo.txt, ex: grep -i "hi" demo.txt, -i means ignore case.
+sudo stands for “superuser do” — it allows a regular user to execute commands with root (administrator) privileges.
+
+Practice:                                                                            
+spandana@DESKTOP-8AJF2HB:/$ ps aux (a-display all users process, u- which user owns which process, x - Includes background or daemon processes (like services))
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND            
+root         1  0.0  0.0   8952   328 ?        Ssl  08:14   0:00 /init
+root         8  0.0  0.0   8952   232 tty1     Ss   08:14   0:00 /init
+
+To view the processess of a particular user: ps -u username 
+To terminate the process by process id : kill PID (in above ex: pid is 1 and 8)
+To terminate the process by processname : pkill processname 
+To forcefully kill the process: kill -9 PID
+To Kill all instances of a process :pkill -9 processname
+To stop the process: kill -STOP PID
+To resume the process: kill -CONT PID
+To get the logs and threats of a process: kill -3 PID
+To change priority of process: renice -n 10 -p PID  (when you say higher number, priority is less for cpu, when you say less number, priority is high for cpu value range for priority: -20 to 19) 
+
+
+Services in linux (which are running in background): means if linux server goes down, while running any service, and when linux server came up, the service runs automatically.
+What is service in linux: It is a special kind of process, service starts at the time of booting of server, whenever server restarts, service starts automatically.
+systemctl list-units --type=service – List all system daemons
+systemctl start service-name – Start a daemon/service
+systemctl stop service-name – Stop a daemon/service
