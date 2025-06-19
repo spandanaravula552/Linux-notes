@@ -10,7 +10,7 @@ To create file in particular directory or folder: touch <file-name> (file displa
 To copy a folder into a new folder: cp -r <source-folder> <destination-folder>
 To delete the file: rm <file-name>
 To copy the file into another file: cp <old file name> <new file-name>  This will create the new file, and copy the contents of old file into new file.
-To rename the file: mv <old file name> <new file-name>
+To rename the file: mv <old file name> <new file-name> (Moves or renames a file or directory.)
 
 To Write contents into the file: we need to install "vim" editor: command is <apt install vim>  if you are not the root user: sudo apt install vim
 you created one file: touch span, to enter into the file: vim <file-name>  ex: vim span
