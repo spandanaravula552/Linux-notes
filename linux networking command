@@ -1,0 +1,7 @@
+uname: to print the name of operating system 
+pipe | symbol is used to give the output of file as input to other command
+grep: global regular expression print 
+ex: cat filename | grep error->it will give output of file which has string error 
+now we can see the output which has error word
+now if we want to make a file of the output use this symbol after grp 
+ex: cat filename | grep error > error.txt
