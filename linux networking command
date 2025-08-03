@@ -12,3 +12,7 @@ whene our source is not connecting to destination, we can take help of tracerout
 To get the public IP address: curl ifconfig.me
 to resolve to ip /fqdn - nslookup google.com
 sudo iptables -L: this command will display iptable rules.
+if we want to list out the files from one directory without navigating into that directory: ls /<directory_name>
+ex: ls /root
+if we want to copy the file from one directory to nother directory: cp <source_file> /<destination_directory>/<desti_file_name>
+ex: cp error.txt /root/db_error.txt  (we are creating the db_error.txt file and copying the data into it from error.txt source file)
