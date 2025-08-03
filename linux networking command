@@ -3,5 +3,12 @@ pipe | symbol is used to give the output of file as input to other command
 grep: global regular expression print 
 ex: cat filename | grep error->it will give output of file which has string error 
 now we can see the output which has error word
-now if we want to make a file of the output use this symbol after grp 
-ex: cat filename | grep error > error.txt
+now if we want to make a file of the output use this symbol > after grp 
+ex: cat filename | grep error > error.txt (error.txt is file name, you can whatever name you want)
+
+ping: ping command is used to check the network connectivity between source and destination
+traceroute ip/fqdn name: traceroute comamnd is used check the n/w coonnectivity b/w source and destination and also to give the hops involed b/w the source and destination.
+whene our source is not connecting to destination, we can take help of traceroute, at which hop our source/packet is dropping. (path packets)
+To get the public IP address: curl ifconfig.me
+to resolve to ip /fqdn - nslookup google.com
+sudo iptables -L: this command will display iptable rules.
